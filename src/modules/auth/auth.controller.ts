@@ -9,7 +9,7 @@ import type { LoginBody, SignupBody } from "./auth.types";
 
 export const signup = async (req: Request, res: Response) => {
   const { name, email, password, role }: SignupBody = req.body;
-
+  // Validation
   if (!name || !email || !password) {
     return sendError(
       res,
