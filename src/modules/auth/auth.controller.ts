@@ -22,6 +22,7 @@ export const signup = async (req: Request, res: Response) => {
     return sendError(res, StatusCodes.BAD_REQUEST, "Invalid email format");
   }
 
+  // Role validation (if provided)
   if (role && !isValidRole(role)) {
     return sendError(
       res,
