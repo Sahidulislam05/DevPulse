@@ -11,6 +11,7 @@ import type {
   UpdateIssueBody,
 } from "./issues.types";
 
+// Create a new issue
 export const createIssue = async (req: AuthRequest, res: Response) => {
   const { title, description, type }: CreateIssueBody = req.body;
   const reporter_id = req.user!.id;
@@ -56,6 +57,7 @@ export const createIssue = async (req: AuthRequest, res: Response) => {
   );
 };
 
+// Get all issues with optional filters and sorting
 export const getAllIssues = async (req: AuthRequest, res: Response) => {
   const { sort = "newest", type, status }: IssueQuery = req.query as IssueQuery;
 
