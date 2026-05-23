@@ -15,6 +15,7 @@ export const authenticate = (
 ) => {
   const token = req.headers["authorization"];
 
+  // Check if token is provided
   if (!token) {
     return sendError(res, StatusCodes.UNAUTHORIZED, "No token provided");
   }
