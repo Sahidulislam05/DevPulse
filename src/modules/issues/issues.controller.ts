@@ -107,6 +107,7 @@ export const getAllIssues = async (req: AuthRequest, res: Response) => {
   return sendSuccess(res, StatusCodes.OK, "Issues fetched", data);
 };
 
+// Get a single issue by ID
 export const getIssueById = async (req: AuthRequest, res: Response) => {
   const { id } = req.params;
 
