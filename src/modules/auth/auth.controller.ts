@@ -34,6 +34,9 @@ export const signup = async (req: Request, res: Response) => {
   const existing = await pool.query("SELECT id FROM users WHERE email = $1", [
     email,
   ]);
+
+  // Check if email already registered
+
   if (existing.rows.length > 0) {
     return sendError(res, StatusCodes.BAD_REQUEST, "Email already registered");
   }
