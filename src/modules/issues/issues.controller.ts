@@ -198,6 +198,7 @@ export const updateIssue = async (req: AuthRequest, res: Response) => {
   );
 };
 
+// Delete an issue
 export const deleteIssue = async (req: AuthRequest, res: Response) => {
   const { id } = req.params;
 
